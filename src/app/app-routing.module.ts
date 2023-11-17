@@ -11,7 +11,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-  }
+  },
+  {
+    path: 'medicos',
+    loadChildren: () =>
+      import('./views/medicos/medico.module').then((m) => m.MedicoModule),
+  },
 ];
 
 @NgModule({

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <mat-sidenav-container class="sidenav-container">
   
     <mat-sidenav #drawer
@@ -26,16 +28,16 @@
         
       </button>
       <button type="button" mat-button (click)="toggleSidenavVisibility()"><mat-icon> menu </mat-icon></button>
-      <span class="d-flex align-items-center gap-2">e-Agenda Médica        
-        <span class="material-symbols-outlined"> ecg </span>
+      <span class="d-flex align-items-center gap-2 fw-semibold fs-4">
+        e-Agenda Médica        
+        <span class="material-symbols-outlined fs-2"> ecg </span>
         </span>
     </mat-toolbar>
 
-    <main>
-      <ng-content>
-        
-      </ng-content>
+    <main>      
+      <ng-content></ng-content>
     </main>
+    
   </mat-sidenav-content>
 
 </mat-sidenav-container>
