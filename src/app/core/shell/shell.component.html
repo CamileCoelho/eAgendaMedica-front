@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  
+    <mat-sidenav #drawer
+               class="sidenav"
+               fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="isSidenavOpen">
+               
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="dashboard">Dashboard</a>
+      <a mat-list-item href="medicos">Medicos</a>
+      <a mat-list-item href="atividades">Atividades</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="toggleSidenavVisibility()"
+              *ngIf="isHandset$ | async">
+        
+      </button>
+      <button type="button" mat-button (click)="toggleSidenavVisibility()"><mat-icon> menu </mat-icon></button>
+      <span class="d-flex align-items-center gap-2">e-Agenda Médica        
+        <span class="material-symbols-outlined"> ecg </span>
+        </span>
+    </mat-toolbar>
+
+    <main>
+      <ng-content>
+        
+      </ng-content>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

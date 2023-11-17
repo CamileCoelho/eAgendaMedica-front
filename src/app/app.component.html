@@ -1,0 +1,15 @@
+<div *ngIf="estaCarregando" class="d-grid place h-75 w-100 justify-content-center align-items-center">
+  <mat-spinner color="primary"></mat-spinner>
+</div>
+
+<app-shell *ngIf="!estaCarregando">
+    <router-outlet></router-outlet>
+</app-shell>
+
+<!-- <app-shell *ngIf="(usuarioLogado$ | async); else auth">
+  <router-outlet></router-outlet>
+</app-shell>
+
+<ng-template #auth>
+  <router-outlet></router-outlet>
+</ng-template> -->

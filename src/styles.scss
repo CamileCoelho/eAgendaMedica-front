@@ -1,0 +1,15 @@
+.ngx-toastr {
+  margin: 5px 0 !important;
+  margin-right: 5px !important;    
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+html, body { height: 100%; width: 100; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.button:hover {
+  opacity: 0.8 !important;
+}

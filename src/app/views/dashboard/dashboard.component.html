@@ -1,0 +1,29 @@
+<section class="mt-5">
+  <div class="container">
+    <div class="card">
+      <div class="row align-items-center gy-3 p-5">
+        
+        <h1 class="card-title fw-semibold fs-2" [style.color]="'#ff4081'">Painel do Usuário</h1>
+
+          <p class="my-2 fs-5">
+            O <span class="" [style.color]="'#ff4081'">e-Agenda Médica</span> busca
+            agilizar o gerenciamento da rotina diária dos médicos facilitando 
+            o acesso e controle de suas consultas e cirurgias.
+          </p>
+          <p class="my-4 fs-5" [style.color]="'#ff4081'">O que você deseja gerenciar?</p>
+
+
+        <section id="buttons" class="d-grid d-md-flex gap-2">
+          
+          <a class="button" mat-fab extended color="primary" routerLink="/medicos/listar">
+            <mat-icon> groups </mat-icon> Médicos</a>
+
+          <a class="button" mat-fab extended color="primary" routerLink="/atividades">
+            <mat-icon> event </mat-icon> Atividades</a>
+
+        </section>
+
+        </div>
+      </div>
+    </div>
+</section>
