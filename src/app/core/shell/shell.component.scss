@@ -15,3 +15,8 @@
   top: 0;
   z-index: 1;
 }
+
+.mat-toolbar a:hover {
+  background-color: #e0e0e0; 
+  transition: background-color 0.3s; 
+}

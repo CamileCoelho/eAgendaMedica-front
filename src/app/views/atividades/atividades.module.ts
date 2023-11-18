@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { DashboardComponent } from './dashboard.component'; 
-import { AtividadesModule } from '../atividades/atividades.module';
+import { AtividadesComponent } from './atividades.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [AtividadesComponent],
   imports: [CommonModule, RouterModule, MatIconModule, MatButtonModule],
 })
-export class DashboardModule {}
+export class AtividadesModule {}

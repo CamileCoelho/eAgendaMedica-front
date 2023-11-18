@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AtividadesComponent } from './views/atividades/atividades.component';
 
 const routes: Routes = [
   // {
@@ -11,6 +12,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+  },
+  {
+    path: 'atividades',
+    component: AtividadesComponent,
+    loadChildren: () =>
+      import('./views/atividades/atividades.module').then((m) => m.AtividadesModule),
   },
   {
     path: 'medicos',

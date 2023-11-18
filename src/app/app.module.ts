@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { DashboardModule } from './views/dashboard/dashboard.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { AtividadesModule } from './views/atividades/atividades.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
     }),
     
     CoreModule,
-    DashboardModule
+    DashboardModule,
+    AtividadesModule
   ],  
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
