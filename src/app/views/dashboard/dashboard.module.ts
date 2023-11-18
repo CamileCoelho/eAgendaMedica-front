@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DashboardComponent } from './dashboard.component'; 
-import { AtividadesModule } from '../atividades/atividades.module';
 
 @NgModule({
   declarations: [DashboardComponent],
