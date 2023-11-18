@@ -1,0 +1,77 @@
+<section class="mt-2">
+  <div class="container py-3 px-3 px-md-5">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form [formGroup]="form!" (ngSubmit)="registrar()">
+          <h1 class="fw-semibold" [style.color]="'#009688'">Registro de Usuário</h1>
+
+          <div class="form-group my-3 position-relative">
+            <label class="form-label" for="nome">Nome de Usuário</label>
+            <input
+              formControlName="nome"
+              [ngClass]="campoEstaInvalido('nome') ? 'is-invalid' : ''"
+              type="text"
+              class="form-control form-control-lg"/>
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <label class="form-label" for="login">Login para o usuário</label>
+            <input
+              formControlName="login"
+              [ngClass]="campoEstaInvalido('login') ? 'is-invalid' : ''"
+              type="text"
+              class="form-control form-control-lg"/>
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <label class="form-label" for="email">Endereço de Email</label>
+            <input
+              formControlName="email"
+              [ngClass]="campoEstaInvalido('email') ? 'is-invalid' : ''"
+              type="email"
+              class="form-control form-control-lg"/>
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <label class="form-label" for="senha">Senha</label>
+            <input
+              formControlName="senha"
+              [ngClass]="campoEstaInvalido('senha') ? 'is-invalid' : ''"
+              type="password"
+              class="form-control form-control-lg"
+            />
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <label class="form-label" for="confirmarSenha"
+              >Confirmar Senha</label
+            >
+            <input
+              formControlName="confirmarSenha"
+              [ngClass]="
+                campoEstaInvalido('confirmarSenha') ? 'is-invalid' : ''
+              "
+              type="password"
+              class="form-control form-control-lg"/>
+          </div>
+
+          <div class="form-group my-3">
+            Já é um usuário?
+            <a role="button"
+               class="text-decoration-none"
+               routerLink="/login"
+               [style.color]="'#009688'">Clique aqui e faça seu login!</a>
+
+          </div>
+
+          <div class="card-footer g-grid d-flex gap-1 mt-4">
+            <button type="submit" class="button btn btn-light px-5 rounded-pill" 
+            [style.background-color]="'#009688'" [style.color]="'#ffffff'">
+              Registrar
+            </button>   
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
