@@ -2,45 +2,40 @@
   <div class="col-md-8 d-grid gap-3 ps-0">
     <h1 class="fs-2">Lista de Médicos</h1>
 
-    <button
-      routerLink="/medicos/inserir"
-      mat-raised-button
-      class="me-auto py-4 px-5 fs-6"
-      color="primary"
-    >
-      <mat-icon>add</mat-icon>
-      Novo Médico
-    </button>
+    <button routerLink="/medicos/inserir"
+            mat-raised-button
+            class="me-auto py-4 px-4 fs-5 fw-semibold"
+            color="primary" >
+            <mat-icon>add</mat-icon>
+            Inserir Novo Médico </button>
 
-    <div class="row gap-3">
-      <mat-card
-        *ngFor="let medico of medicos$ | async"
-        appCardHover
-        class="col-12 col-md-6 col-lg-3"
-      >
+    <div class="row gap-3 m-1">
+      <mat-card *ngFor="let medico of medicos$ | async"
+                appCardHover
+                class="col-12 col-md-6 col-lg-3" >
+
         <mat-card-header>
           <mat-card-title>
             <span>{{ medico.nome }}</span>
           </mat-card-title>
         </mat-card-header>
 
-        <mat-card-content> </mat-card-content>
+        <mat-card-content> 
+          <mat-card-subtitle>{{ medico.crm }}</mat-card-subtitle>
+          <mat-card-content>{{ medico.especialidade }}</mat-card-content>
+        </mat-card-content>
 
-        <mat-card-actions class="pe-0" align="end">
-          <button
-            mat-icon-button
-            matTooltip="Editar"
-            color="primary"
-            routerLink="/medicos/editar/id"
-          >
+        <mat-card-actions class="pe-0" [align]="'end'">
+          <button mat-icon-button
+                  matTooltip="Editar"
+                  color="primary"
+                  routerLink="/medicos/editar/id" >
             <mat-icon>edit_note</mat-icon>
           </button>
-          <button
-            mat-icon-button
-            matTooltip="Excluir"
-            color="warn"
-            routerLink="/medicos/excluir/id"
-          >
+          <button mat-icon-button
+                  matTooltip="Excluir"
+                  color="warn"
+                  routerLink="/medicos/excluir/id" >
             <mat-icon>delete_sweep</mat-icon>
           </button>
         </mat-card-actions>

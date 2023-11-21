@@ -7,8 +7,8 @@ import { VisualizarMedicoViewModel } from '../models/visualizar-medico.view-mode
 
 @Injectable()
 export class MedicoService {
-  // private API_URL = `${environment.API_URL}/medicos`;
-  private API_URL = `https://localhost:7070/swagger/v1/swagger.json/api/medicos`;
+  
+  private API_URL = `https://localhost:7070/api/medicos`;
 
   constructor(private http: HttpClient) {}
 
