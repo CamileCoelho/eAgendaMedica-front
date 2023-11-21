@@ -2,9 +2,15 @@
   <mat-spinner color="primary"></mat-spinner>
 </div>
 
-<app-shell *ngIf="!estaCarregando">
-    <router-outlet></router-outlet>
-</app-shell>
+<div *ngIf="usuario$ | async as usuario; else auth">
+  <app-shell *ngIf="!estaCarregando">
+      <router-outlet></router-outlet>
+  </app-shell>
+</div>
+
+<ng-template #auth>
+  <router-outlet></router-outlet>
+</ng-template>
 
 <!-- <app-shell *ngIf="(usuarioLogado$ | async); else auth">
   <router-outlet></router-outlet>

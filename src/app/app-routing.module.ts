@@ -3,12 +3,32 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AtividadesComponent } from './views/atividades/atividades.component';
 
-const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'login',
-  //   pathMatch: 'full',
+const routes: Routes = [  
+  // { 
+  //   path: '', 
+  //   redirectTo: 'conta/autenticar', 
+  //   pathMatch: 'full' 
   // },
+  // { 
+  //   path: 'conta/autenticar', 
+  //   component: LoginComponent, 
+  //   canActivate: [LoginGuard] 
+  // },
+  // { 
+  //   path: 'conta/registrar', 
+  //   component: RegistroComponent, 
+  //   canActivate: [LoginGuard] 
+  // },
+  // { 
+  //   path: 'dashboard', 
+  //   component: DashboardComponent, 
+  //   canActivate: [authGuard] 
+  // },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
   {
     path: 'dashboard',
     component: DashboardComponent,
@@ -16,8 +36,6 @@ const routes: Routes = [
   {
     path: 'atividades',
     component: AtividadesComponent,
-    loadChildren: () =>
-      import('./views/atividades/atividades.module').then((m) => m.AtividadesModule),
   },
   {
     path: 'medicos',
