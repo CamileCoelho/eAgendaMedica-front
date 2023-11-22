@@ -3,23 +3,19 @@
 <mat-sidenav-container  *ngIf="usuario$ | async as usuario" class="sidenav-container">
 
   <mat-sidenav #drawer
-             class="sidenav"
-             fixedInViewport
-             [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-             [mode]="(isHandset$ | async) ? 'over' : 'side'"
-             [opened]="isSidenavOpen">
+               class="sidenav"
+               fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="isSidenavOpen">
              
-  <mat-toolbar>
-    <li mat-list-item  class="nav-item ms-auto">
-      <button (click)="sair()" class="button btn btn-light px-5 rounded-pill" [style.background-color]="'#009688'" [style.color]="'#ffffff'">
-        <i class="bi bi-door-open me-2"></i>Sair
-      </button>
-    </li>
+  <mat-toolbar class="justify-content-center">
+    <a class="text-dark px-3 py-1 pe-4 justify-content-center" href="dashboard"><mat-icon class="fs-3"> home </mat-icon></a>
   </mat-toolbar>
 
   <mat-nav-list>    
     <!-- <a mat-list-item href="dashboard">Dashboard</a> -->
-    <a mat-list-item href="medicos">Medicos</a>
+    <!-- <a mat-list-item href="medicos">Medicos</a> -->
 
     <mat-expansion-panel class="mb-1">
       <mat-expansion-panel-header>
@@ -35,7 +31,13 @@
       <a mat-list-item href="cirurgias">Cirurgias</a>
       <a mat-list-item href="consultas">Consultas</a>
     </mat-expansion-panel>
-    
+        
+    <!-- <li mat-list-item class="nav-item ms-auto">
+      <a  mat-list-item (click)="sair()" 
+              class="rounded-pill fw-bold" 
+              [style.background-color]="'#009688'" >
+              Sair </a>
+    </li> -->    
   </mat-nav-list>
 </mat-sidenav>
 
@@ -43,14 +45,27 @@
 
   <mat-toolbar color="primary">
     
-    <button type="button" mat-button (click)="toggleSidenavVisibility()">
+    <button appCardHover 
+            type="button" 
+            mat-button 
+            (click)="toggleSidenavVisibility()">
       <mat-icon class="fs-4"> menu </mat-icon>
     </button>
 
-    <span class="d-flex align-items-center gap-2 fw-semibold fs-4">
+    <span class="d-flex align-items-center gap-2 fw-semibold fs-4 ps-3">
       e-Agenda Médica        
       <span class="material-symbols-outlined fs-2"> ecg </span>
-      </span>
+    </span>    
+  
+    <div class="flex-spacer"></div>
+  
+    <a mat-list-item (click)="sair()" 
+      class="rounded-pill fw-bold"
+      style="width: 10%; height: 50%;" 
+      appCardHover>
+      <span class="text-light px-3 fs-5">Sair</span>
+      <mat-icon class="align-self-center p-0 m-0 pt-1">logout</mat-icon>
+    </a>
   </mat-toolbar>
 
   <main style=" height: max-content; width: 90%; padding-left: 10%; padding-right: 10%; padding-bottom: 10%;">      

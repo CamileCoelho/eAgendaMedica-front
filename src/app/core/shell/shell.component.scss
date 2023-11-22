@@ -17,6 +17,10 @@
 }
 
 .mat-toolbar a:hover {
-  background-color: #e0e0e0; 
+  background-color: #00968796; 
   transition: background-color 0.3s; 
+}
+
+.flex-spacer {
+  flex-grow: 1;
 }
