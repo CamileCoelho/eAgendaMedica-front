@@ -1,26 +1,9 @@
-.sidenav-container {
-  height: 100%;
+.botao a:hover {
+  background-color: #fafafa !important;
+  border-radius: 10% !important;
+  transition: background-color 0.3s !important;
 }
 
-.sidenav {
-  width: 200px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.mat-toolbar a:hover {
-  background-color: #00968796; 
-  transition: background-color 0.3s; 
-}
-
-.flex-spacer {
-  flex-grow: 1;
-}
+// .flex-spacer {
+//   flex-grow: 1;
+// }

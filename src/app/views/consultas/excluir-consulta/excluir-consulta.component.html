@@ -1,0 +1,87 @@
+<div class="container h-100 align-self-start justify-content-start">
+
+  <section class="col-sm col-lg-6 col-xxl-7">
+    <!-- <app-titulo-pagina icone="delete">Exclusão de Categoria</app-titulo-pagina>
+    <app-descricao-pagina>
+      Aqui você pode excluir categorias obsoletas.
+    </app-descricao-pagina> -->
+
+    <mat-card>
+      <mat-card-content class="d-grid gap-3 p-3">
+        <mat-label class="fs-5 fw-semibold">Informações: </mat-label>
+
+        <mat-list>
+        
+          <mat-list-item class="row align-items-center">
+            <dt class="col">
+              <label class="control-label">Medico:</label>
+            </dt>
+            <dd class="col">
+              {{ consultaVM?.medico }}
+            </dd>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <br>
+
+          <mat-list-item class="row align-items-center">
+            <dt class="col">
+              <label class="control-label">Data:</label>
+            </dt>
+            <dd class="col">
+              {{ consultaVM?.dataInicio }} -  {{ consultaVM?.dataTermino }}
+            </dd>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <br>
+
+          <mat-list-item class="row align-items-center">
+            <dt class="col">
+              <label class="control-label">Horário:</label>
+            </dt>
+            <dd class="col">
+              {{ consultaVM?.horaInicio }} -  {{ consultaVM?.horaTermino }}
+            </dd>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          
+          <br>
+
+          <mat-list-item class="row align-items-center">
+            <dt class="col">
+              <label class="control-label">Detalhes:</label>
+            </dt>
+            <dd class="col">
+              {{ consultaVM?.detalhes }}
+            </dd>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          
+        </mat-list>
+      </mat-card-content>
+      <mat-card-footer class="my-2">
+        <div class="row px-4 gap-2">
+          <button mat-flat-button
+            color="warn"
+            class="col"
+            data-cy="btnConfirmar"
+            (click)="gravar()"
+            type="button">
+            <mat-icon>delete_forever</mat-icon>
+            Excluir
+          </button>
+          <button mat-stroked-button
+            color="warn"
+            class="col"
+            type="button"
+            routerLink="/consultas/listar">
+            <mat-icon>arrow_back</mat-icon>
+            Voltar
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+
+  </section>
+</div>
