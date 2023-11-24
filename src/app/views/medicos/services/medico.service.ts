@@ -18,13 +18,13 @@ export class MedicoService {
     .pipe(map((res) => res.dados));
   }
 
-  editar(id: number, medico: FormsMedicoViewModel): Observable<FormsMedicoViewModel> {
+  editar(id: string, medico: FormsMedicoViewModel): Observable<FormsMedicoViewModel> {
     return this.http
     .put<any>(`${this.API_URL}/${id}`, medico)
     .pipe(map((res) => res.dados));  
   }
 
-  excluir(id: number): Observable<any> {
+  excluir(id: string): Observable<any> {
     return this.http.delete<any>(`${this.API_URL}/${id}`);
   }
 
@@ -34,7 +34,7 @@ export class MedicoService {
       .pipe(map((res) => res.dados));
   }
 
-  selecionarTodos(): Observable<ListarMedicoViewModel[]> {
+  public selecionarTodos(): Observable<ListarMedicoViewModel[]> {
     return this.http
     .get<any>(this.API_URL)
     .pipe(map((res) => res.dados));
