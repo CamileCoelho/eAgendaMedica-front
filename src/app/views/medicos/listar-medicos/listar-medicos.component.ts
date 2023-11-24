@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MedicoService } from '../services/medico.service';
 import { ListarMedicoViewModel } from '../models/listar-medico.view-model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-listar-medicos',

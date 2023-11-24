@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MedicoService } from '../services/medico.service';
 import { Router } from '@angular/router';
 import { FormsMedicoViewModel } from '../models/forms-medico.view-model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-inserir-medico',
@@ -14,6 +15,7 @@ export class InserirMedicoComponent implements OnInit {
 
   constructor( private formBuilder: FormBuilder, 
                private medicoService: MedicoService,
+               private toastrService: ToastrService,
                private router: Router ) {}
 
   ngOnInit(): void {
@@ -32,6 +34,10 @@ export class InserirMedicoComponent implements OnInit {
   }
 
   processarSucesso(res: FormsMedicoViewModel) {
+    this.toastrService.success(
+      `O médico "${res.nome}" foi cadastrado com sucesso!`,
+      'Sucesso'
+    );
     this.router.navigate(['/medicos', 'listar']);
   }
 
