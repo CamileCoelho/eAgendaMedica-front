@@ -1,0 +1,46 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-12 d-grid gap-3 ps-0">
+    <h1 class="fs-2">Lista de Cirurgias</h1>
+
+    <button routerLink="/cirurgias/inserir"
+            mat-raised-button
+            class="me-auto py-4 px-4 fs-5 fw-semibold"
+            color="primary" >
+            <mat-icon>add</mat-icon>
+            Inserir Nova Cirurgia </button>
+
+    <div class="row gap-3 m-1">
+      <mat-card *ngFor="let cirurgia of ( cirurgias$ | async )"
+                appCardHover
+                class="col-12 col-md-6 col-lg-3 col-xxl-2" >
+
+        <mat-card-header>
+          <mat-card-title>
+            <span>{{ cirurgia.dataInicio | date }}</span>
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content> 
+          <mat-card-subtitle>{{ cirurgia.horaInicio }} - {{ cirurgia.horaTermino }}</mat-card-subtitle>
+        </mat-card-content>
+        
+        <mat-card-content>{{ cirurgia?.detalhes }}</mat-card-content>
+
+        <mat-card-actions class="pe-0" [align]="'end'">
+          <button mat-icon-button
+                  matTooltip="Editar"
+                  color="primary"
+                  routerLink="/cirurgias/editar/{{ cirurgia.id }}" >
+            <mat-icon>edit_note</mat-icon>
+          </button>
+          <button mat-icon-button
+                  matTooltip="Excluir"
+                  color="warn"
+                  routerLink="/cirurgias/excluir/{{ cirurgia.id }}" >
+            <mat-icon>delete_sweep</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

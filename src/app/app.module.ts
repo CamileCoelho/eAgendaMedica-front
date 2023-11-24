@@ -14,11 +14,15 @@ import { LoginModule } from './views/login/login.module';
 import { RegistroModule } from './views/registro/registro.module';
 import { AuthService } from './core/auth/services/auth.service';
 import { httpTokenInterceptor } from './core/auth/services/http-token.interceptor';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 import './extensions/form-group.extension';
 
 function logarUsuarioSalvoFactory(authService: AuthService) {
   return () => authService.logarUsuarioSalvo();
 }
+
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [

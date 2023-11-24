@@ -42,6 +42,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./views/medicos/medico.module').then((m) => m.MedicoModule),
   },
+  {
+    path: 'consultas',
+    loadChildren: () =>
+      import('./views/consultas/consulta.module').then((m) => m.ConsultaModule),
+  },
+  {
+    path: 'cirurgias',
+    loadChildren: () =>
+      import('./views/cirurgias/cirurgia.module').then((m) => m.CirurgiaModule),
+  },
 ];
 
 @NgModule({
