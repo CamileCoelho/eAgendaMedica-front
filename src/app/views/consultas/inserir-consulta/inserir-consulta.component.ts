@@ -65,7 +65,13 @@ export class InserirConsultaComponent implements OnInit {
                    ? erro.error.erros[0]
                    : 'Ocorreu um erro desconhecido.';
     }
-
+    
+    if(erro.error.Erros !== undefined){
+      mensagemErro = erro.error.Erros.length > 0
+      ? erro.error.Erros[0]
+      : 'Ocorreu um erro desconhecido.';
+    }
+   
     this.toastrService.warning(
       `${mensagemErro}`,
       'Aviso'

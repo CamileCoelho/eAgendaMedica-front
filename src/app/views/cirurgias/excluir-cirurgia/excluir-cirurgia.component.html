@@ -1,9 +1,9 @@
 <div class="container h-100 align-self-center justify-content-start">
 
   <section class="col-sm col-lg-6 col-xxl-7">
-    <!-- <app-titulo-pagina icone="delete">Exclusão de Categoria</app-titulo-pagina>
+    <!-- <app-titulo-pagina icone="delete">Exclusão de Cirurgias</app-titulo-pagina>
     <app-descricao-pagina>
-      Aqui você pode excluir categorias obsoletas.
+      Aqui você pode excluir cirurgias obsoletas.
     </app-descricao-pagina> -->
 
     <mat-card>
@@ -24,17 +24,6 @@
               </dd>
             </div>
           </mat-list>
-
-          <!-- <mat-list-item class="row align-items-center">
-            <dt class="col">
-              <label class="control-label">Médicos:</label>
-            </dt>
-            <dd class="col" *ngIf="cirurgiaVM && cirurgiaVM.medicos && cirurgiaVM.medicos.length > 0">
-              <mat-list *ngFor="let medico of cirurgiaVM.medicos">
-                {{ medico.nome }}
-              </mat-list>
-            </dd>
-          </mat-list-item> -->
 
           <mat-divider></mat-divider>
 
@@ -59,8 +48,8 @@
             <dd class="col">
               {{ cirurgiaVM?.horaInicio }} -  {{ cirurgiaVM?.horaTermino }}
             </dd>
+            <mat-divider></mat-divider>
           </mat-list-item>
-          <mat-divider></mat-divider>
           
           <br>
 

@@ -64,6 +64,12 @@ export class InserirCirurgiaComponent implements OnInit {
                    ? erro.error.Erros[0]
                    : 'Ocorreu um erro desconhecido.';
     }
+    
+    if(erro.error.erros !== undefined){
+      mensagemErro = erro.error.erros.length > 0
+      ? erro.error.erros[0]
+      : 'Ocorreu um erro desconhecido.';
+    }
 
     if(mensagemErro.includes('Cannot pass null model to Validate.')){
       mensagemErro = 'Você deve preencher todos os campos, com exessão dos detalhes.';
