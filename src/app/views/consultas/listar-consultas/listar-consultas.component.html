@@ -16,17 +16,21 @@
 
         <mat-card-header>
           <mat-card-title>
-            <span>{{ consulta.dataInicio | date }}</span>
+            <span class="fs-6 fw-semibold">Do dia {{ consulta.dataInicio | date }}</span>
+            <span class="fs-6 fw-semibold"> às {{ consulta.horaInicio }}</span>
           </mat-card-title>
         </mat-card-header>
 
         <mat-card-content> 
-          <mat-card-subtitle>{{ consulta.horaInicio }} - {{ consulta.horaTermino }}</mat-card-subtitle>
+          <mat-card-subtitle>
+            <span class="fs-6 fw-semibold" >Ao dia {{ consulta.dataTermino | date }}</span>
+            <span class="fs-6 fw-semibold"> às {{ consulta.horaTermino }}</span>
+          </mat-card-subtitle>
         </mat-card-content>
         
-        <mat-card-content>{{ consulta?.detalhes }}</mat-card-content>
+        <mat-card-content>Medico: {{ consulta.nomeMedico }}</mat-card-content>
 
-        <mat-card-content>{{ consulta.nomeMedico }}</mat-card-content>
+        <mat-card-content *ngIf="consulta?.detalhes != ''">Detalhes: {{ consulta?.detalhes }}</mat-card-content>
 
         <mat-card-actions class="pe-0" [align]="'end'">
           <button mat-icon-button

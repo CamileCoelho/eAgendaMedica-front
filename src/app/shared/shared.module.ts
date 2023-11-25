@@ -16,7 +16,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [CardHoverDirective],
@@ -28,7 +29,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatListModule,
     MatTooltipModule,
     MatInputModule,
-    
+    MatSnackBarModule,
     MatTableModule,
     MatMenuModule,
     ReactiveFormsModule,
@@ -49,7 +50,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatListModule,
     MatTooltipModule,
     MatInputModule,
-    
+    MatSnackBarModule,
     MatTableModule,
     MatMenuModule,
     ReactiveFormsModule,

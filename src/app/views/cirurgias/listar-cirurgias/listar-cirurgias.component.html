@@ -16,15 +16,19 @@
 
         <mat-card-header>
           <mat-card-title>
-            <span>{{ cirurgia.dataInicio | date }}</span>
+            <span class="fs-6 fw-semibold">Do dia {{ cirurgia.dataInicio | date }}</span>
+            <span class="fs-6 fw-semibold"> às {{ cirurgia.horaInicio }}</span>
           </mat-card-title>
         </mat-card-header>
 
         <mat-card-content> 
-          <mat-card-subtitle>{{ cirurgia.horaInicio }} - {{ cirurgia.horaTermino }}</mat-card-subtitle>
+          <mat-card-subtitle>
+            <span class="fs-6 fw-semibold" >Ao dia {{ cirurgia.dataTermino | date }}</span>
+            <span class="fs-6 fw-semibold"> às {{ cirurgia.horaTermino }}</span>
+          </mat-card-subtitle>
         </mat-card-content>
         
-        <mat-card-content>{{ cirurgia?.detalhes }}</mat-card-content>
+        <mat-card-content *ngIf="cirurgia?.detalhes != ''">Detalhes: {{ cirurgia?.detalhes }}</mat-card-content>
 
         <mat-card-actions class="pe-0" [align]="'end'">
           <button mat-icon-button

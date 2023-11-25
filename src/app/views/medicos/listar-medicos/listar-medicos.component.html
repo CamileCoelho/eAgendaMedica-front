@@ -16,15 +16,15 @@
 
         <mat-card-header>
           <mat-card-title>
-            <span>{{ medico.nome }}</span>
+            <span class="fs-5 fw-semibold">{{ medico.nome }}</span>
           </mat-card-title>
         </mat-card-header>
 
         <mat-card-content> 
-          <mat-card-subtitle>{{ medico.crm }}</mat-card-subtitle>
+          <mat-card-subtitle>Crm: {{ medico.crm }}</mat-card-subtitle>
         </mat-card-content>
         
-        <mat-card-content>{{ medico.especialidade }}</mat-card-content>
+        <mat-card-content>Especialidade: {{ medico.especialidade }}</mat-card-content>
         
         <mat-card-actions class="pe-0" [align]="'end'">
           <button mat-icon-button

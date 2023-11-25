@@ -45,7 +45,14 @@ export class EditarMedicoComponent{
     this.router.navigate(['/medicos', 'listar']);
   }
 
-  processarFalha(err: any) {
-    console.error('Erro:', err);
+  processarFalha(erro: any) {
+    const mensagemErro = erro.error.erros.length > 0
+                          ? erro.error.erros[0]
+                          : 'Ocorreu um erro desconhecido.';
+
+    this.toastrService.warning(
+      `${mensagemErro}`,
+      'Aviso'
+    );
   }
 }

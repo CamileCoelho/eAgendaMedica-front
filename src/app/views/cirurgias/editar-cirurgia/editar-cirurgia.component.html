@@ -1,7 +1,7 @@
 <div class="row justify-content-center align-items-center mt-5">
-  <div class="col-md-5">
+  <div class="col-12 col-md-10 col-lg-6 mx-auto mt-5">
 
-    <h1 class="fs-2">Inserir Nova Consulta</h1>
+    <h1 class="fs-2">Editar Cirurgia</h1>
 
     <form [formGroup]="form!" (ngSubmit)="gravar()" class="d-grid mt-4">
 
@@ -33,10 +33,10 @@
         <mat-label>Horário de término</mat-label>
         <input type="time" formControlName="horaTermino" matInput />
       </mat-form-field>
-
+   
       <mat-form-field appearance="outline">
-        <mat-label>Selecione um Médico</mat-label>
-        <mat-select formControlName="medicoId">
+        <mat-label>Selecione os médicos dessa cirurgia</mat-label>
+        <mat-select formControlName="medicoIds" multiple="">
           <mat-option
             *ngFor="let medico of (medicos$ | async)"
             [value]="medico.id">
@@ -57,7 +57,7 @@
         color="warn"
         class="col"
         type="button"
-        routerLink="/consultas/listar">
+        routerLink="/cirurgias/listar">
         <mat-icon>arrow_back</mat-icon>
         Voltar
         </button>

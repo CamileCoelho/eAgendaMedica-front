@@ -11,15 +11,22 @@
       </mat-form-field>
    
       <mat-form-field appearance="outline">
-        <mat-label>Data</mat-label>
-        <input formControlName="dataInicio" matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-label>Data De Inicio</mat-label>
+        <input formControlName="dataInicio" matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Horário de início</mat-label>
         <input type="time" formControlName="horaInicio" matInput />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Data De Termino</mat-label>
+        <input formControlName="dataTermino" matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field appearance="outline">

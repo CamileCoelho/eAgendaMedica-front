@@ -27,6 +27,7 @@ export class EditarConsultaComponent{
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       dataInicio: [''],
+      dataTermino: [''],
       horaInicio: ['06:00'],
       horaTermino: ['08:00'],
       detalhes: [''],
@@ -41,7 +42,7 @@ export class EditarConsultaComponent{
   gravar(): void {
     this.consultaService.editar(this.route.snapshot.paramMap.get('id')!, this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
-      error: (err) => this.processarFalha(err),
+      error: (erro) => this.processarFalha(erro),
     });
   }
 
@@ -54,9 +55,23 @@ export class EditarConsultaComponent{
     );
     this.router.navigate(['/consultas', 'listar']);
   }
+ 
+  processarFalha(erro: any) {
+  var mensagemErro = '';
 
-  processarFalha(err: any) {
-    console.error('Erro:', err);
+  if(erro.error.erros === undefined){
+    mensagemErro = 'Você deve preencher todos os campos, com exessão dos detalhes.';
+  }
+  else{
+    mensagemErro = erro.error.erros.length > 0
+                  ? erro.error.erros[0]
+                  : 'Ocorreu um erro desconhecido.';
+  }
+                      
+    this.toastrService.warning(
+      `${mensagemErro}`,
+      'Aviso'
+    );
   }
   
   formatarData(data: any): string {

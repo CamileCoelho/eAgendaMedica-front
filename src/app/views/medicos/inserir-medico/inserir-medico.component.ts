@@ -16,7 +16,7 @@ export class InserirMedicoComponent implements OnInit {
   constructor( private formBuilder: FormBuilder, 
                private medicoService: MedicoService,
                private toastrService: ToastrService,
-               private router: Router ) {}
+               private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -29,7 +29,7 @@ export class InserirMedicoComponent implements OnInit {
   gravar(): void {
     this.medicoService.criar(this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
-      error: (err) => this.processarFalha(err),
+      error: (erro) => this.processarFalha(erro),
     });
   }
 
@@ -41,7 +41,14 @@ export class InserirMedicoComponent implements OnInit {
     this.router.navigate(['/medicos', 'listar']);
   }
 
-  processarFalha(err: any) {
-    console.error('Erro:', err);
+  processarFalha(erro: any) {
+    const mensagemErro = erro.error.erros.length > 0
+                          ? erro.error.erros[0]
+                          : 'Ocorreu um erro desconhecido.';
+
+    this.toastrService.warning(
+      `${mensagemErro}`,
+      'Aviso'
+    );
   }
 }

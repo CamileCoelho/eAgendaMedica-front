@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ListarMedicoViewModel } from '../../medicos/models/listar-medico.view-model';
 import { Observable } from 'rxjs';
 import { MedicoService } from '../../medicos/services/medico.service';
+import { WriteVarExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-inserir-consulta',
@@ -26,8 +27,9 @@ export class InserirConsultaComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       dataInicio: [''],
+      dataTermino: [''],
       horaInicio: ['06:00'],
-      horaTermino: ['08:00'],
+      horaTermino: ['07:00'],
       detalhes: [''],
       medicoId: [''],
     });
@@ -38,7 +40,7 @@ export class InserirConsultaComponent implements OnInit {
   gravar(): void {
     this.consultaService.criar(this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
-      error: (err) => this.processarFalha(err),
+      error: (erro) => this.processarFalha(erro),
     });
   }
 
@@ -52,8 +54,22 @@ export class InserirConsultaComponent implements OnInit {
     this.router.navigate(['/consultas', 'listar']);
   }
 
-  processarFalha(err: any) {
-    console.error('Erro:', err);
+  processarFalha(erro: any) {
+    var mensagemErro = '';
+                  
+    if(erro.error.erros === undefined){
+      mensagemErro = 'Você deve preencher todos os campos, com exessão dos detalhes.';
+    }
+    else{
+      mensagemErro = erro.error.erros.length > 0
+                   ? erro.error.erros[0]
+                   : 'Ocorreu um erro desconhecido.';
+    }
+
+    this.toastrService.warning(
+      `${mensagemErro}`,
+      'Aviso'
+    );
   }
   
   formatarData(data: any): string {
