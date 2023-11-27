@@ -46,33 +46,13 @@ export class LoginComponent {
     });
   }
 
-  // login() {
-  //   if (this.form?.invalid) {
-  //     for (const controlName in this.form.controls) {
-  //       if (this.form.controls.hasOwnProperty(controlName)) {
-  //         const control = this.form.get(controlName);
-  //         if (control?.invalid) {
-  //           const errorMessage = `Campo ${controlName} é obrigatório.`;
-  //           this.toastrService.warning(errorMessage);
-  //         }
-  //       }
-  //     }
-  //     return;
-  //   }
-  
-  //   this.authService.login(this.form?.value).subscribe({
-  //     next: (res) => this.processarSucesso(res),
-  //     error: (err) => this.processarFalha(err),
-  //   });
-  // }
-
   processarSucesso(res: TokenViewModel) {
     this.toastrService.success(
       'Seja bem-vindo, ' + res.usuarioToken.nome + '!',
       'Sucesso'
     );
 
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['dashboard']);
   }
 
   processarFalha(err: Error) {

@@ -10,13 +10,15 @@ import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.compo
 import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
 import { MedicoModule } from '../medicos/medico.module';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { VisualizarCirurgiaComponent } from './visualizar-cirurgia/visualizar-cirurgia.component';
 
 @NgModule({
   declarations: [
     ListarCirurgiasComponent, 
     InserirCirurgiaComponent, 
     EditarCirurgiaComponent, 
-    ExcluirCirurgiaComponent
+    ExcluirCirurgiaComponent,
+    VisualizarCirurgiaComponent
   ],
   imports: [
     CommonModule,

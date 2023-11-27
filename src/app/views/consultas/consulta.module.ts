@@ -9,13 +9,15 @@ import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.co
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
 import { MedicoModule } from '../medicos/medico.module';
+import { VisualizarConsultaComponent } from './visualizar-consulta/visualizar-consulta.component';
 
 @NgModule({
   declarations: [
     ListarConsultasComponent, 
     InserirConsultaComponent, 
     EditarConsultaComponent, 
-    ExcluirConsultaComponent
+    ExcluirConsultaComponent,
+    VisualizarConsultaComponent
   ],
   imports: [
     CommonModule,

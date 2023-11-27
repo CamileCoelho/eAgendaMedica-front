@@ -1,30 +1,25 @@
-<div class="container h-100 align-self-center justify-content-start">
+<div class="container h-100 align-self-start justify-content-start">
 
   <section class="col-sm col-lg-6 col-xxl-7">
-    <!-- <app-titulo-pagina icone="delete">Exclusão de Cirurgias</app-titulo-pagina>
+    <!-- <app-titulo-pagina icone="delete">Exclusão de Consultas</app-titulo-pagina>
     <app-descricao-pagina>
-      Aqui você pode excluir cirurgias obsoletas.
+      Aqui você pode excluir consultas obsoletas.
     </app-descricao-pagina> -->
 
     <mat-card>
       <mat-card-content class="d-grid gap-3 p-3">
-        <mat-label class="fs-5 fw-semibold">Informações: </mat-label>
+        <mat-label class="fs-5 fw-semibold"> Informações da Consulta: </mat-label>
 
         <mat-list>
         
-          <mat-list class="row align-items-center pb-0">
+          <mat-list-item class="row align-items-center">
             <dt class="col">
-              <label class="control-label">Medicos:</label>
+              <label class="control-label">Medico:</label>
             </dt>
-            <div class="row">
-              <dd class="col-auto" *ngFor="let medico of cirurgiaVM?.medicos">
-                <span class="">
-                  {{ medico.nome }},
-                </span>
-              </dd>
-            </div>
-          </mat-list>
-
+            <dd class="col">
+              {{ consultaVM?.medico?.nome }}
+            </dd>
+          </mat-list-item>
           <mat-divider></mat-divider>
 
           <br>
@@ -34,56 +29,49 @@
               <label class="control-label">Data:</label>
             </dt>
             <dd class="col">
-              {{ cirurgiaVM?.dataInicio | date }} 
+              {{ consultaVM?.dataInicio | date }} -  {{ consultaVM?.dataTermino | date }}
             </dd>
           </mat-list-item>
           <mat-divider></mat-divider>
 
           <br>
-        
+
           <mat-list-item class="row align-items-center">
             <dt class="col">
               <label class="control-label">Horário:</label>
             </dt>
             <dd class="col">
-              {{ cirurgiaVM?.horaInicio }} -  {{ cirurgiaVM?.horaTermino }}
+              {{ consultaVM?.horaInicio }} -  {{ consultaVM?.horaTermino }}
             </dd>
           </mat-list-item>
           <mat-divider></mat-divider>
           
           <br>
 
-          <mat-list-item  *ngIf="cirurgiaVM?.detalhes != ''" class="row align-items-center">
+          <mat-list-item  *ngIf="consultaVM?.detalhes != ''" class="row align-items-center">
             <dt class="col">
               <label class="control-label">Detalhes:</label>
             </dt>
             <dd class="col">
-              {{ cirurgiaVM?.detalhes }}
+              {{ consultaVM?.detalhes }}
             </dd>
           </mat-list-item>
-          <mat-divider *ngIf="cirurgiaVM?.detalhes != ''" ></mat-divider>
+          <mat-divider *ngIf="consultaVM?.detalhes != ''"></mat-divider>
           
         </mat-list>
       </mat-card-content>
       <mat-card-footer class="my-2">
         <div class="row px-4 gap-2">
-          <button mat-flat-button
-            color="warn"
-            class="col"
-            data-cy="btnConfirmar"
-            (click)="gravar()"
-            type="button">
-            <mat-icon>delete_forever</mat-icon>
-            Excluir
-          </button>
+         
           <button mat-stroked-button
             color="primary"
             class="col"
             type="button"
-            routerLink="/cirurgias/listar">
+            routerLink="/consultas/listar">
             <mat-icon>arrow_back</mat-icon>
             Voltar
           </button>
+
         </div>
       </mat-card-footer>
     </mat-card>

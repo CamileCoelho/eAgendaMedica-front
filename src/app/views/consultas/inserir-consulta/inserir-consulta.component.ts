@@ -71,6 +71,10 @@ export class InserirConsultaComponent implements OnInit {
       ? erro.error.Erros[0]
       : 'Ocorreu um erro desconhecido.';
     }
+    
+    if(mensagemErro.includes('Cannot pass null model to Validate.')){
+      mensagemErro = 'Você deve preencher todos os campos, com exessão dos detalhes.';
+    }
    
     this.toastrService.warning(
       `${mensagemErro}`,

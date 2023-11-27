@@ -31,6 +31,12 @@
         <mat-card-content *ngIf="cirurgia?.detalhes != ''">Detalhes: {{ cirurgia?.detalhes }}</mat-card-content>
 
         <mat-card-actions class="pe-0" [align]="'end'">
+           <button mat-icon-button
+                  matTooltip="Visualizar cirurgia completa"
+                  color="accent"
+                  routerLink="/cirurgias/visualizar/{{ cirurgia.id }}" >
+            <mat-icon>zoom_in</mat-icon>
+          </button>
           <button mat-icon-button
                   matTooltip="Editar"
                   color="primary"

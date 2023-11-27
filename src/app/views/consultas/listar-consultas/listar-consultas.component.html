@@ -29,10 +29,18 @@
         </mat-card-content>
         
         <mat-card-content>Medico: {{ consulta.nomeMedico }}</mat-card-content>
+        
+        <mat-card-content>Descanso obrigatório: {{ consulta.periodoRecuperacao }}.</mat-card-content>
 
         <mat-card-content *ngIf="consulta?.detalhes != ''">Detalhes: {{ consulta?.detalhes }}</mat-card-content>
 
         <mat-card-actions class="pe-0" [align]="'end'">
+          <button mat-icon-button
+                  matTooltip="Visualizar consulta completa"
+                  color="accent"
+                  routerLink="/consultas/visualizar/{{ consulta.id }}" >
+            <mat-icon>zoom_in</mat-icon>
+          </button>
           <button mat-icon-button
                   matTooltip="Editar"
                   color="primary"

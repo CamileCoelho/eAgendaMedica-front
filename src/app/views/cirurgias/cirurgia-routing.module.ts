@@ -8,6 +8,7 @@ import { ListarCirurgiasViewModel } from './models/listar-cirurgia.view-model';
 import { FormsCirurgiaViewModel } from './models/forms-cirurgia.view-model';
 import { VisualizarCirurgiaViewModel } from './models/visualizar-cirurgia.view-model';
 import { ListarCirurgiasComponent } from './listar-cirurgias/listar-cirurgias.component';
+import { VisualizarCirurgiaComponent } from './visualizar-cirurgia/visualizar-cirurgia.component';
 
 const listarCirurgiasResolver: ResolveFn<ListarCirurgiasViewModel[]> = () => {
   return inject(CirurgiaService).selecionarTodas();
@@ -50,6 +51,11 @@ const routes: Routes = [
   {
     path: 'excluir/:id',
     component: ExcluirCirurgiaComponent,
+    resolve: { cirurgia: visualizarCirurgiaResolver },
+  },
+  {
+    path: 'visualizar/:id',
+    component: VisualizarCirurgiaComponent,
     resolve: { cirurgia: visualizarCirurgiaResolver },
   },
 ];

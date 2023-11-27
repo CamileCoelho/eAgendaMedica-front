@@ -1,4 +1,4 @@
-<div class="container h-100 align-self-center justify-content-start">
+<div class="container h-100 align-self-start justify-content-start">
 
   <section class="col-sm col-lg-6 col-xxl-7">
     <!-- <app-titulo-pagina icone="delete">Exclusão de Cirurgias</app-titulo-pagina>
@@ -8,7 +8,7 @@
 
     <mat-card>
       <mat-card-content class="d-grid gap-3 p-3">
-        <mat-label class="fs-5 fw-semibold">Informações: </mat-label>
+        <mat-label class="fs-5 fw-semibold"> Informações da Cirurgia: </mat-label>
 
         <mat-list>
         
@@ -34,13 +34,13 @@
               <label class="control-label">Data:</label>
             </dt>
             <dd class="col">
-              {{ cirurgiaVM?.dataInicio | date }} 
+              {{ cirurgiaVM?.dataInicio | date }} -  {{ cirurgiaVM?.dataTermino | date }}
             </dd>
           </mat-list-item>
           <mat-divider></mat-divider>
 
           <br>
-        
+
           <mat-list-item class="row align-items-center">
             <dt class="col">
               <label class="control-label">Horário:</label>
@@ -61,21 +61,13 @@
               {{ cirurgiaVM?.detalhes }}
             </dd>
           </mat-list-item>
-          <mat-divider *ngIf="cirurgiaVM?.detalhes != ''" ></mat-divider>
+          <mat-divider *ngIf="cirurgiaVM?.detalhes != ''"></mat-divider>
           
         </mat-list>
       </mat-card-content>
       <mat-card-footer class="my-2">
         <div class="row px-4 gap-2">
-          <button mat-flat-button
-            color="warn"
-            class="col"
-            data-cy="btnConfirmar"
-            (click)="gravar()"
-            type="button">
-            <mat-icon>delete_forever</mat-icon>
-            Excluir
-          </button>
+         
           <button mat-stroked-button
             color="primary"
             class="col"
@@ -84,6 +76,7 @@
             <mat-icon>arrow_back</mat-icon>
             Voltar
           </button>
+
         </div>
       </mat-card-footer>
     </mat-card>

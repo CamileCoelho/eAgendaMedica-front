@@ -8,7 +8,7 @@
 
     <mat-card>
       <mat-card-content class="d-grid gap-3 p-3">
-        <mat-label class="fs-5 fw-semibold">Informações: </mat-label>
+        <mat-label class="fs-5 fw-semibold">Informações da Cirurgia: </mat-label>
 
         <mat-list>
         
@@ -29,7 +29,7 @@
               <label class="control-label">Data:</label>
             </dt>
             <dd class="col">
-              {{ consultaVM?.dataInicio }} -  {{ consultaVM?.dataTermino }}
+              {{ consultaVM?.dataInicio | date }} -  {{ consultaVM?.dataTermino | date }}
             </dd>
           </mat-list-item>
           <mat-divider></mat-divider>
@@ -43,7 +43,7 @@
             <dd class="col">
               {{ consultaVM?.horaInicio }} -  {{ consultaVM?.horaTermino }}
             </dd>
-          </mat-list-item>
+          </mat-list-item>          
           <mat-divider></mat-divider>
           
           <br>
@@ -55,8 +55,8 @@
             <dd class="col">
               {{ consultaVM?.detalhes }}
             </dd>
-            <mat-divider></mat-divider>
           </mat-list-item>
+          <mat-divider *ngIf="consultaVM?.detalhes != ''" ></mat-divider>
           
         </mat-list>
       </mat-card-content>

@@ -26,7 +26,6 @@ export class RegistroComponent implements OnInit {
       login: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(6)]],
-      confirmarSenha: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -34,27 +33,6 @@ export class RegistroComponent implements OnInit {
     return this.form!.get(nome)!.touched && this.form!.get(nome)!.invalid;
   }
   
-  // registrar() {
-  //   if (this.form?.invalid) {
-  //     for (const controlName in this.form.controls) {
-  //       if (this.form.controls.hasOwnProperty(controlName)) {
-  //         const control = this.form.get(controlName);
-  //         if (control?.invalid) {
-  //           const errorMessage = `Campo ${controlName} é obrigatório.`;
-  //           this.toastrService.warning(errorMessage);
-  //         }
-  //       }
-  //     }
-  //     return;
-  //   }
-  
-  //   this.authService.registrar(this.form?.value).subscribe({
-  //     next: (res) => this.processarSucesso(res),
-  //     error: (err) => this.processarFalha(err),
-  //   });
-  // }
- 
-
   registrar() {
     if (this.form?.invalid) {
       const erros = this.form.validate();
@@ -71,12 +49,14 @@ export class RegistroComponent implements OnInit {
   }
 
   processarSucesso(res: TokenViewModel) {
+    this.authService.login(this.form?.value).subscribe();
+
     this.toastrService.success(
       'Seja bem-vindo, ' + res.usuarioToken.nome + '!',
       'Sucesso'
     );
 
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['dashboard']);
   }
 
   processarFalha(err: Error) {

@@ -8,6 +8,7 @@ import { ListarConsultasComponent } from './listar-consultas/listar-consultas.co
 import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.component';
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
+import { VisualizarConsultaComponent } from './visualizar-consulta/visualizar-consulta.component';
 
 const listarConsultasResolver: ResolveFn<ListarConsultasViewModel[]> = () => {
   return inject(ConsultaService).selecionarTodas();
@@ -50,6 +51,11 @@ const routes: Routes = [
   {
     path: 'excluir/:id',
     component: ExcluirConsultaComponent,
+    resolve: { consulta: visualizarConsultaResolver },
+  },
+  {
+    path: 'visualizar/:id',
+    component: VisualizarConsultaComponent,
     resolve: { consulta: visualizarConsultaResolver },
   },
 ];
