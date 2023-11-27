@@ -45,7 +45,7 @@ Siga estas etapas simples para iniciar o projeto localmente:
 
 ```bash
 # Clone o repositório
-git clone [https://github.com/seu-usuario/e-agenda-medica.git](https://github.com/andersonbraga/eAgendaMedicalCare)
+git clone https://github.com/CamileCoelho/eAgendaMedica-front.git
 
 # Navegue até a pasta do projeto back-end
 cd /backend
